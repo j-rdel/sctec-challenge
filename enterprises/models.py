@@ -1,20 +1,17 @@
-import uuid
-
 from django.db import models
 
-from .enums import BUSINESS_SEGMENT_CHOICES, ENTERPRISE_STATUS_CHOICES, EnterpriseStatusEnum
+from core.enums import STATUS_CHOICES, StatusEnum
+from core.models import BaseModel
+from enterprises.enums import BUSINESS_SEGMENT_CHOICES
 
 
-class Enterprise(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Enterprise(BaseModel):
     name = models.CharField(max_length=255)
     entrepreneur_name = models.CharField(max_length=255)
     municipality = models.CharField(max_length=255)
     segment = models.IntegerField(choices=BUSINESS_SEGMENT_CHOICES)
     contact_email = models.EmailField()
-    status = models.CharField(choices=ENTERPRISE_STATUS_CHOICES, default=EnterpriseStatusEnum.ACTIVE.value)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    status = models.CharField(choices=STATUS_CHOICES, default=StatusEnum.ACTIVE.value)
 
     class Meta:
         db_table = "enterprises"

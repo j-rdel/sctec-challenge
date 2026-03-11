@@ -11,7 +11,7 @@ class Enterprise(BaseModel):
     municipality = models.CharField(max_length=255)
     segment = models.IntegerField(choices=BUSINESS_SEGMENT_CHOICES)
     contact_email = models.EmailField()
-    status = models.CharField(choices=STATUS_CHOICES, default=StatusEnum.ACTIVE.value)
+    status = models.IntegerField(choices=STATUS_CHOICES, default=StatusEnum.ACTIVE.value)
 
     class Meta:
         db_table = "enterprises"

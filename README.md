@@ -16,7 +16,7 @@ Cada empreendimento possui informações como:
 - Nome do empreendedor responsável
 - Município de Santa Catarina
 - Segmento de atuação
-- E-mail ou meio de contato
+- E-mail de contato
 - Status (ativo ou inativo)
 
 A API fornece endpoints para:
@@ -66,8 +66,7 @@ sctec-challenge
 ├── core/ # Componentes reutilizáveis da aplicação
 │ ├── models.py # BaseModel com UUID e timestamps
 │ ├── pagination.py # Paginação padrão da API
-│ ├── permissions.py # Permissões reutilizáveis
-│ ├── exceptions.py # Exceções customizadas
+│ ├── filters.py # Filtros reutilizáveis
 │
 ├── enterprises/ # Módulo responsável pelos empreendimentos
 │ ├── models.py
@@ -77,7 +76,6 @@ sctec-challenge
 │ ├── tests/
 │ │ ├── factories.py
 │ │ ├── test_enterprise_views.py
-│ │ └── test_enterprise_filters.py
 │
 ├── config/ # Configurações do projeto Django
 │ ├── settings.py
@@ -217,7 +215,7 @@ Os testes cobrem:
 
 O vídeo de apresentação da solução pode ser acessado no link abaixo:
 
-➡️ **[Link do vídeo pitch](COLE_AQUI_O_LINK_DO_VIDEO)**
+➡️ **[Link do vídeo pitch](https://youtu.be/NKPeVjzMbV8)**
 
 ---
 

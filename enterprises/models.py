@@ -15,7 +15,7 @@ class Enterprise(BaseModel):
 
     class Meta:
         db_table = "enterprises"
-        ordering = ["created_at"]
+        ordering = ["-created_at"]
 
     def __str__(self):
         return self.name

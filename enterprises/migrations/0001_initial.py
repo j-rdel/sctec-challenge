@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('municipality', models.CharField(max_length=255)),
                 ('segment', models.IntegerField(choices=[(0, 'Tecnologia'), (1, 'Comércio'), (2, 'Indústria'), (3, 'Serviços'), (4, 'Agronegócio')])),
                 ('contact_email', models.EmailField(max_length=254)),
-                ('status', models.CharField(choices=[(0, 'Inativo'), (1, 'Ativo')], default=1)),
+                ('status', models.IntegerField(choices=[(0, 'Inativo'), (1, 'Ativo')], default=1)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
             ],
